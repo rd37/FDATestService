@@ -8,7 +8,7 @@ from twisted.cred.portal import Portal
 from twisted.cred.checkers import AllowAnonymousAccess, FilePasswordDB
 from twisted.internet import reactor
 
-p = Portal(FTPRealm('.', userHome='/Users' ), [AllowAnonymousAccess(), FilePasswordDB("FTPService/key.dat")])
+p = Portal(FTPRealm('.', userHome='/home' ), [AllowAnonymousAccess(), FilePasswordDB("FTPService/key.dat")])
 f = FTPFactory(p)
 reactor.listenTCP(2221, f)
 reactor.run()
